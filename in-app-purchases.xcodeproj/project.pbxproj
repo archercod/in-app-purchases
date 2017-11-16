@@ -12,6 +12,7 @@
 		EADB4A511FBCE04300C2450E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB4A4F1FBCE04300C2450E /* Main.storyboard */; };
 		EADB4A531FBCE04300C2450E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADB4A521FBCE04300C2450E /* Assets.xcassets */; };
 		EADB4A561FBCE04300C2450E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB4A541FBCE04300C2450E /* LaunchScreen.storyboard */; };
+		EADB4A5E1FBCE8F200C2450E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EADB4A521FBCE04300C2450E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EADB4A551FBCE04300C2450E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EADB4A571FBCE04300C2450E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADB4A5E1FBCE8F200C2450E /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +57,7 @@
 		EADB4A4A1FBCE04300C2450E /* in-app-purchases */ = {
 			isa = PBXGroup;
 			children = (
+				EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */,
 				EADB4A4B1FBCE04300C2450E /* AppDelegate.swift */,
 				EADB4A4D1FBCE04300C2450E /* ViewController.swift */,
 				EADB4A4F1FBCE04300C2450E /* Main.storyboard */,
@@ -276,6 +280,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZM8JH55Z4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/in-app-purchases",
+				);
 				INFOPLIST_FILE = "in-app-purchases/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swiftarcher.in-app-purchases";
@@ -291,6 +299,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZM8JH55Z4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/in-app-purchases",
+				);
 				INFOPLIST_FILE = "in-app-purchases/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swiftarcher.in-app-purchases";
