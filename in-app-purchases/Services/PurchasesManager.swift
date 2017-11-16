@@ -6,6 +6,8 @@
 //  Copyright © 2017 Marcin Pietrzak. All rights reserved.
 //
 
+typealias CompletionHandler = (_ success: Bool) -> ()
+
 import Foundation
 import StoreKit
 
@@ -17,6 +19,7 @@ class PurchasesManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactio
     
     var productsRequests: SKProductsRequest!
     var products = [SKProduct]()
+    var transactionComplete: CompletionHandler?
     
     func fetchProducts() {
         let productIds = NSSet(object: IAP_REMOVE_ADS) as! Set<String>
@@ -25,14 +28,17 @@ class PurchasesManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactio
         productsRequests.start()
     }
     
-    func purchasesRemoveAds() {
+    func purchasesRemoveAds(onComplete: @escaping CompletionHandler) {
         
         //Check paymant is available
         if SKPaymentQueue.canMakePayments() && products.count > 0 {
+            transactionComplete = onComplete
             let removeAdsProduct = products[0]
             let payment = SKPayment(product: removeAdsProduct)
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().add(payment) //start processing payment request
+        } else {
+            onComplete(false)
         }
         
     }
@@ -55,14 +61,19 @@ class PurchasesManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactio
             SKPaymentQueue.default().finishTransaction(transaction)
             if transaction.payment.productIdentifier == IAP_REMOVE_ADS {
                 UserDefaults.standard.set(true, forKey: IAP_REMOVE_ADS)
+                transactionComplete?(true)
             }
                 break
             case .failed:
             SKPaymentQueue.default().finishTransaction(transaction)
+            transactionComplete?(false)
                 break
             case .restored:
             SKPaymentQueue.default().finishTransaction(transaction)
-            default: break
+            transactionComplete?(true)
+            default:
+                transactionComplete?(false)
+                break
                 
             }
             
