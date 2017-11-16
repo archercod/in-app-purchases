@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		EADB4A4C1FBCE04300C2450E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADB4A4B1FBCE04300C2450E /* AppDelegate.swift */; };
-		EADB4A4E1FBCE04300C2450E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADB4A4D1FBCE04300C2450E /* ViewController.swift */; };
+		EADB4A4E1FBCE04300C2450E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADB4A4D1FBCE04300C2450E /* HomeVC.swift */; };
 		EADB4A511FBCE04300C2450E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB4A4F1FBCE04300C2450E /* Main.storyboard */; };
 		EADB4A531FBCE04300C2450E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADB4A521FBCE04300C2450E /* Assets.xcassets */; };
 		EADB4A561FBCE04300C2450E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB4A541FBCE04300C2450E /* LaunchScreen.storyboard */; };
 		EADB4A5E1FBCE8F200C2450E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */; };
+		EADB4A621FBDB46C00C2450E /* PurchasesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADB4A611FBDB46C00C2450E /* PurchasesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EADB4A481FBCE04300C2450E /* in-app-purchases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "in-app-purchases.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADB4A4B1FBCE04300C2450E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EADB4A4D1FBCE04300C2450E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EADB4A4D1FBCE04300C2450E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		EADB4A501FBCE04300C2450E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EADB4A521FBCE04300C2450E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EADB4A551FBCE04300C2450E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EADB4A571FBCE04300C2450E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EADB4A611FBDB46C00C2450E /* PurchasesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,15 +59,32 @@
 		EADB4A4A1FBCE04300C2450E /* in-app-purchases */ = {
 			isa = PBXGroup;
 			children = (
-				EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */,
+				EADB4A601FBDB46000C2450E /* Services */,
+				EADB4A5F1FBDB44200C2450E /* Controller */,
 				EADB4A4B1FBCE04300C2450E /* AppDelegate.swift */,
-				EADB4A4D1FBCE04300C2450E /* ViewController.swift */,
 				EADB4A4F1FBCE04300C2450E /* Main.storyboard */,
 				EADB4A521FBCE04300C2450E /* Assets.xcassets */,
 				EADB4A541FBCE04300C2450E /* LaunchScreen.storyboard */,
 				EADB4A571FBCE04300C2450E /* Info.plist */,
+				EADB4A5D1FBCE8F200C2450E /* GoogleMobileAds.framework */,
 			);
 			path = "in-app-purchases";
+			sourceTree = "<group>";
+		};
+		EADB4A5F1FBDB44200C2450E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EADB4A4D1FBCE04300C2450E /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EADB4A601FBDB46000C2450E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EADB4A611FBDB46C00C2450E /* PurchasesManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADB4A4E1FBCE04300C2450E /* ViewController.swift in Sources */,
+				EADB4A621FBDB46C00C2450E /* PurchasesManager.swift in Sources */,
+				EADB4A4E1FBCE04300C2450E /* HomeVC.swift in Sources */,
 				EADB4A4C1FBCE04300C2450E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
