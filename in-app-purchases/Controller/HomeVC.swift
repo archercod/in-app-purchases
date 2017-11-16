@@ -17,6 +17,16 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupAds()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setupAds() {
         if UserDefaults.standard.bool(forKey: PurchasesManager.instance.IAP_REMOVE_ADS) == true {
             
             bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
@@ -29,12 +39,16 @@ class HomeVC: UIViewController {
             bannerView.removeFromSuperview()
             
         }
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func restoreButtonPressed(_ sender: Any) {
+        
+        PurchasesManager.instance.restorePurchases { (success) in
+            if success {
+                self.setupAds()
+            }
+        }
+        
     }
     
     @IBAction func remoceAdsPressed(_ sender: Any) {

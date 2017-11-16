@@ -41,6 +41,17 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-WS-kKm">
+                                        <rect key="frame" x="312" y="14" width="55" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="8gp-mg-8A1"/>
+                                            <constraint firstAttribute="height" constant="27" id="gOz-7n-UK7"/>
+                                        </constraints>
+                                        <state key="normal" image="restore"/>
+                                        <connections>
+                                            <action selector="restoreButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7W-xR-YfR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -50,6 +61,8 @@
                                     <constraint firstItem="gBs-ZY-as1" firstAttribute="top" secondItem="CjE-ti-gHO" secondAttribute="top" id="Fpf-Pv-Gh1"/>
                                     <constraint firstItem="ZkU-bc-Ci1" firstAttribute="top" secondItem="CjE-ti-gHO" secondAttribute="top" constant="30" id="S9w-1x-Mfb"/>
                                     <constraint firstAttribute="height" constant="150" id="XRj-Jp-Erz"/>
+                                    <constraint firstAttribute="trailing" secondItem="hgL-WS-kKm" secondAttribute="trailing" constant="8" id="YwN-xY-HVP"/>
+                                    <constraint firstItem="hgL-WS-kKm" firstAttribute="top" secondItem="CjE-ti-gHO" secondAttribute="top" constant="14" id="kbE-pg-Jum"/>
                                     <constraint firstAttribute="trailing" secondItem="gBs-ZY-as1" secondAttribute="trailing" id="mB5-d6-1oY"/>
                                 </constraints>
                             </view>
@@ -138,6 +151,7 @@
     </scenes>
     <resources>
         <image name="BGImage" width="475" height="300"/>
+        <image name="restore" width="31" height="27"/>
         <image name="videoThumbnail" width="375" height="250"/>
     </resources>
 </document>
